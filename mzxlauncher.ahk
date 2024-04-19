@@ -18,9 +18,18 @@ if not DirExist("Games")
     DirCreate "Games"
 }
 
-
 ; Create the window:
 MyGui := Gui()
+
+; call dark mode for window title + menu
+SetWindowAttribute(MyGui)
+
+; call dark mode for controls
+SetWindowTheme(MyGui)
+
+#include .Cmpl8r\DarkMode.scriptlet
+
+MyGui.Title := "mzxlauncher"
 
 myGui.OnEvent("Close", myGui_Close)
 myGui_Close(thisGui) {  ; Declaring this parameter is optional.
