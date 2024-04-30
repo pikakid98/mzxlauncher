@@ -34,8 +34,6 @@ myGui_Close(thisGui) {  ; Declaring this parameter is optional.
     if FileExist(A_Temp "\mzx.ini") {
         FileDelete A_Temp "\mzx.ini"
     }
-
-    FileDelete A_Temp "\7zr.exe"
 }
 
 ; Create the ListView with two columns, Name and Size:
