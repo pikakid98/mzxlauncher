@@ -1,11 +1,9 @@
 ﻿#Requires AutoHotkey v2.0
 #NoTrayIcon
 
-;@Ahk2Exe-Set FileVersion, 1.0
-;@Ahk2Exe-Set ProductVersion, 1.0.0.0
+;@Ahk2Exe-Set FileVersion, 1.1
+;@Ahk2Exe-Set ProductVersion, 1.1.0.0
 ;@Ahk2Exe-Set CompanyName, Pikakid98
-
-FileInstall "7zr.exe", A_Temp "\7zr.exe", 1
 
 if not FileExist("mzxlauncher.exe")
 {
@@ -66,7 +64,7 @@ LV_Click(LV, RowNumber)
 {
     RowText := LV.GetText(RowNumber)  ; Get the text from the row's first field.
     FileAppend "", A_Temp "mzx.ini", "CP0"
-    IniWrite RowText, A_Temp "\mzx.ini", "Game", "mzx"
+    IniWrite A_ScriptDir "\Games\" RowText, A_Temp "\mzx.ini", "Game", "mzx"
 }
 
 MyBtn_Click1(*)
@@ -82,17 +80,8 @@ MyBtn_Click2(*)
         MyGui.Hide
         Value := IniRead(A_Temp "\mzx.ini", "Game", "mzx")
 
-        RunWait A_Temp "\7zr.exe x " "Games\" Value " -o" A_Temp "\MZX" , , "Hide"
-
-        if FileExist(A_Temp "\MZX\manifest.ini") {
-            Value2 := IniRead(A_Temp "\MZX\manifest.ini", "mzxfile", "mzx")
-
-            RunWait "megazeux.exe" " " '"' A_Temp "\MZX\Game\" Value2 '"'
-            DirDelete A_Temp "\MZX", 1
-        } else {
-            MsgBox "Extraction Failed!"
-        }
-
+        RunWait "mzext.exe" " " Value
+        
         MyGui.Show
     } else {
         MyGui.Hide
