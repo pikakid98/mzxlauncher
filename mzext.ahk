@@ -5,6 +5,18 @@
 ;@Ahk2Exe-Set ProductVersion, 1.0.0.0
 ;@Ahk2Exe-Set CompanyName, Pikakid98
 
+if A_Args.Length < 1
+{
+    MsgBox  "
+    (
+        Please run via a .mzxa file
+        
+        "mzext.exe" "{FILE}.mzxa"
+    )"
+
+    ExitApp
+}
+
 FileInstall "7zr.exe", A_Temp "\7zr.exe", 1
 
 RunWait A_Temp "\7zr.exe" " x " '"' A_Args[1] '"' " -o" A_Temp "\MZX" , , "Hide"
