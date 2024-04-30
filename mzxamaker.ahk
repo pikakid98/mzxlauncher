@@ -15,7 +15,7 @@ if A_Args.Length < 1
 FileInstall "7zr.exe", A_Temp "\7zr.exe", 1
 
 DirCreate A_Temp "\mzxamaker\Game"
-FileCopy '"' A_Args[1] '"' " " '"' A_Temp "\mzxamaker\Game" '"'
+FileCopy A_Args[1], A_Temp "\mzxamaker\Game"
 
 SetWorkingDir A_Temp "\mzxamaker"
 
