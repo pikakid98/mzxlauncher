@@ -14,7 +14,7 @@ Save files are saved to the temp folder where they're extracted and are deleted 
 \
 [7-Zip Reduced](https://7-zip.org/download.html)
 \
-[Dark Mode For AHK v2](https://github.com/Git-Pikakid98/Dark-Mode-For-AHK-v2)
+[Dark Mode For AHK v2](https://github.com/pikakid98/Dark-Mode-For-AHK-v2)
 
 <details>
 <summary>If compiling with Compile-in-ator</summary>
