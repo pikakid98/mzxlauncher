@@ -17,7 +17,7 @@ if A_Args.Length < 1
     ExitApp
 }
 
-FileInstall "7zr.exe", A_Temp "\7zr.exe", 1
+FileInstall ".Cmpl8r\7zr.exe", A_Temp "\7zr.exe", 1
 
 RunWait A_Temp "\7zr.exe" " x " '"' A_Args[1] '"' " -o" A_Temp "\MZX" , , "Hide"
 
