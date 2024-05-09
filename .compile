@@ -8,11 +8,11 @@ del ".Cmpl8r\DarkMode.scriptlet" /S /Q
 
 
 ::-------------------------------------------------------------------------------------
-"..\..\Binaries\7zr.exe" "%CD%"
+"..\..\Binaries\7zr.exe" ".Cmpl8r"
 
 "%AHK%\Compiler\Ahk2Exe.exe" /in "mzext.ahk" /out "Output\mzext.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
 
-del "7zr.exe" /S /Q
+del ".Cmpl8r\7zr.exe" /S /Q
 ::-------------------------------------------------------------------------------------
 
 
