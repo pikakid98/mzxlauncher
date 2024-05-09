@@ -11,11 +11,11 @@ del ".Cmpl8r\DarkMode.scriptlet" /S /Q
 copy "..\..\Binaries\7zr.exe" ".Cmpl8r"
 
 "%AHK%\Compiler\Ahk2Exe.exe" /in "mzext.ahk" /out "Output\mzext.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
-
-del ".Cmpl8r\7zr.exe" /S /Q
 ::-------------------------------------------------------------------------------------
 
 
 ::-------------------------------------------------------------------------------------
 "%AHK%\Compiler\Ahk2Exe.exe" /in "mzxamaker.ahk" /out "Output\mzxamaker.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
+
+del ".Cmpl8r\7zr.exe" /S /Q
 ::-------------------------------------------------------------------------------------

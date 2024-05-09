@@ -2,7 +2,7 @@
 #NoTrayIcon
 
 ;@Ahk2Exe-Set FileVersion, 1.0
-;@Ahk2Exe-Set ProductVersion, 1.0.0.0
+;@Ahk2Exe-Set ProductVersion, 1.0.0.0-Dev
 ;@Ahk2Exe-Set CompanyName, Pikakid98
 
 if A_Args.Length < 1

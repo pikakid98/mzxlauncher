@@ -2,7 +2,7 @@
 #NoTrayIcon
 
 ;@Ahk2Exe-Set FileVersion, 1.0
-;@Ahk2Exe-Set ProductVersion, 1.0.0.0
+;@Ahk2Exe-Set ProductVersion, 1.0.0.0-Dev
 ;@Ahk2Exe-Set CompanyName, Pikakid98
 
 if A_Args.Length < 1
@@ -12,7 +12,7 @@ if A_Args.Length < 1
     ExitApp
 }
 
-FileInstall "7zr.exe", A_Temp "\7zr.exe", 1
+FileInstall ".Cmpl8r\7zr.exe", A_Temp "\7zr.exe", 1
 
 DirCreate A_Temp "\mzxamaker\Game"
 FileCopy A_Args[1], A_Temp "\mzxamaker\Game"
