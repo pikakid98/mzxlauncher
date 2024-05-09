@@ -3,10 +3,8 @@
 
 #Include ver.scriptlet
 
-if A_Args.Length < 1
+if A_Args.Length < 2
 {
-    MsgBox  "Please drop a folder onto the exe"
-    
     ExitApp
 }
 
@@ -17,9 +15,11 @@ FileCopy A_Args[1], A_Temp "\mzxamaker\Game"
 
 SetWorkingDir A_Temp "\mzxamaker"
 
-Loop Files, "*.mzx", "F R"
+Loop Files, "Game\*.mzx", "F R"
 
 IniWrite(A_LoopFileName,"manifest.ini", "mzxfile", "mzx")
 
-DirCreate A_ScriptDir "\MZXFile"
-RunWait A_Temp "\7zr.exe" " a " A_ScriptDir "\MZXFile\file.mzxa" " " "*", , "Hide"
+DirCreate A_Args[3]
+RunWait A_Temp "\7zr.exe" " a " '"' A_Args[4] '"' " " "*", , "Hide"
+
+FileDelete A_Temp "\7zr.exe"

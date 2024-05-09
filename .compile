@@ -1,21 +1,21 @@
 ::-------------------------------------------------------------------------------------
+copy "..\..\Binaries\7zr.exe" ".Cmpl8r"
+
+"%AHK%\Compiler\Ahk2Exe.exe" /in "mzext.ahk" /out ".Cmpl8r\mzext.exe" /icon "icon.ico" /compress 0 /base "%AHK%\v2\AutoHotkey64.exe"
+::-------------------------------------------------------------------------------------
+
+
+::-------------------------------------------------------------------------------------
+"%AHK%\Compiler\Ahk2Exe.exe" /in "mzxamaker.ahk" /out ".Cmpl8r\mzxamaker.exe" /icon "icon.ico" /compress 0 /base "%AHK%\v2\AutoHotkey64.exe"
+
+del ".Cmpl8r\7zr.exe" /S /Q
+::-------------------------------------------------------------------------------------
+
+
+::-------------------------------------------------------------------------------------
 copy "..\DarkMode\DarkMode.scriptlet" ".Cmpl8r"
 
 "%AHK%\Compiler\Ahk2Exe.exe" /in "mzxlauncher.ahk" /out "Output\mzxlauncher.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
 
 del ".Cmpl8r\DarkMode.scriptlet" /S /Q
-::-------------------------------------------------------------------------------------
-
-
-::-------------------------------------------------------------------------------------
-copy "..\..\Binaries\7zr.exe" ".Cmpl8r"
-
-"%AHK%\Compiler\Ahk2Exe.exe" /in "mzext.ahk" /out "Output\mzext.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
-::-------------------------------------------------------------------------------------
-
-
-::-------------------------------------------------------------------------------------
-"%AHK%\Compiler\Ahk2Exe.exe" /in "mzxamaker.ahk" /out "Output\mzxamaker.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
-
-del ".Cmpl8r\7zr.exe" /S /Q
 ::-------------------------------------------------------------------------------------

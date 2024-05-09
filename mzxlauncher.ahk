@@ -9,6 +9,15 @@ if not FileExist("mzxlauncher.exe")
     ExitApp
 }
 
+if A_Args.Length > 1
+{
+    #Include args.scriptlet
+}
+
+DirCreate A_Temp "mzxlauncher"
+FileInstall ".Cmpl8r\mzext.exe", A_Temp "mzxlauncher\mzext.exe", 1
+FileInstall ".Cmpl8r\mzxamaker.exe", A_Temp "mzxlauncher\mzxamaker.exe", 1
+
 if not DirExist("Games")
 {
     DirCreate "Games"

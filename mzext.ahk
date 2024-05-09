@@ -3,27 +3,33 @@
 
 #Include ver.scriptlet
 
-if A_Args.Length < 1
+if A_Args.Length < 3
 {
-    MsgBox  "
-    (
-        Please run via a .mzxa file
-        
-        "mzext.exe" "{FILE}.mzxa"
-    )"
-
     ExitApp
 }
 
 FileInstall ".Cmpl8r\7zr.exe", A_Temp "\7zr.exe", 1
 
-RunWait A_Temp "\7zr.exe" " x " '"' A_Args[1] '"' " -o" A_Temp "\MZX" , , "Hide"
+RunWait A_Temp "\7zr.exe" " x " '"' A_Args[1] '"' " -o" '"' A_Args[2] '"' , , "Hide"
 
-if FileExist(A_Temp "\MZX\manifest.ini") {
-    mzxmanifest := IniRead(A_Temp "\MZX\manifest.ini", "mzxfile", "mzx")
+FileDelete A_Temp "\7zr.exe"
 
-    RunWait "megazeux.exe" " " '"' A_Temp "\MZX\Game\" mzxmanifest '"'
-    DirDelete A_Temp "\MZX", 1
-} else {
+if not FileExist(A_Args[2] "\manifest.ini") {
     MsgBox "Extraction Failed!"
+    ExitApp
+}
+
+if A_Args[3] = "-noplay"
+{
+    ExitApp
+}
+
+if A_Args[3] = "-play"
+{
+    mzxmanifest := IniRead(A_Args[2] "\manifest.ini", "mzxfile", "mzx")
+
+    RunWait A_Args[4] "\mzxrun.exe" " " '"' A_Args[2] "\Game\" mzxmanifest '"'
+    DirDelete A_Args[2], 1
+
+    ExitApp
 }

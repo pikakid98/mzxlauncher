@@ -1,0 +1,35 @@
+﻿#Requires AutoHotkey v2.0
+
+if A_Args[1] = "-help"
+{
+    MsgBox "
+	(
+	    mzext - An mzxa extraction and launch tool
+            "mzxlauncher.exe" -ext "{FILE}.mzxa" "{ExtractDir}" -play "{MegazeuxDir}"
+		
+            "mzxlauncher.exe" -ext "{FILE}.mzxa" "{ExtractDir}" -noplay
+              This only extracts but doesn'this play for people who want to make their own script to launch it
+              
+	    mzxamaker - A tool to make .mzxa files (These are just renamed 7z files but with some extras
+            "mzxlauncher.exe" -make "{PathToArchive}" "{FILE}.mzx"
+              Doing this will open a GUI to create your mzxa file
+              
+            "mzxlauncher.exe" -make "{PathToArchive}" "{FILE}.mzx" "{Output}" "{PATH}\{NameOfFile}.mzxa"
+              This is the full command line without a GUI
+	)", "mzxlauncher"
+}
+
+if A_Args[1] = "-ext"
+{
+    if A_Args[2] = "-ext"
+    {
+        
+    }
+}
+
+if A_Args[1] = "-make"
+{
+    
+}
+    
+ExitApp
