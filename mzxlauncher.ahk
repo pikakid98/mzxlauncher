@@ -1,9 +1,7 @@
 ﻿#Requires AutoHotkey v2.0
 #NoTrayIcon
 
-;@Ahk2Exe-Set FileVersion, 1.1
-;@Ahk2Exe-Set ProductVersion, 1.1.0.0-Dev
-;@Ahk2Exe-Set CompanyName, Pikakid98
+#Include ver.scriptlet
 
 if not FileExist("mzxlauncher.exe")
 {

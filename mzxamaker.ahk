@@ -1,9 +1,7 @@
 ﻿#Requires AutoHotkey v2.0
 #NoTrayIcon
 
-;@Ahk2Exe-Set FileVersion, 1.0
-;@Ahk2Exe-Set ProductVersion, 1.0.0.0-Dev
-;@Ahk2Exe-Set CompanyName, Pikakid98
+#Include ver.scriptlet
 
 if A_Args.Length < 1
 {
@@ -22,4 +20,6 @@ SetWorkingDir A_Temp "\mzxamaker"
 Loop Files, "*.mzx", "F R"
 
 IniWrite(A_LoopFileName,"manifest.ini", "mzxfile", "mzx")
-RunWait A_Temp "\7zr.exe" " a " A_MyDocuments " " "*", , "Hide"
+
+DirCreate A_ScriptDir "\MZXFile"
+RunWait A_Temp "\7zr.exe" " a " A_ScriptDir "\MZXFile\file.mzxa" " " "*", , "Hide"
